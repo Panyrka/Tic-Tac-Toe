@@ -75,8 +75,9 @@ figure game_handler::do_moves()
 	return figure::empty;
 }
 
-void game_handler::finish_round(const figure& fig)
+void game_handler::finish_round(const figure& fig) const
 {
+	game_field_.print_game_field_to_cmd();
 	if (fig == figure::empty)
 	{
 		std::cout << "Game over! The game is a draw." << std::endl << std::endl;
