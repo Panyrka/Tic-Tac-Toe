@@ -12,7 +12,7 @@ class game_field
 {
 private:
 	/**
-	 * \brief  количество р€дов
+	 * \brief  оличество р€дов
 	 */
 	static constexpr size_t rows = 3;
 
@@ -23,19 +23,12 @@ private:
 
 	/**
 	 * \brief ћассив, содержащий игровое поле
-	 * явл€етс€ статическим, так как задаЄтс€ единожды в начале игры.
+	 * явл€етс€ статическим, так как задаетс€ единожды в начале игры.
 	 */
-	std::array<std::array<figure, rows>, columns> game_field_;
-
-	/**
-	 * \brief ¬спомогательный метод дл€ получени€ символьного представлени€ enum figure
-	 * \param fig фигура, дл€ которой нужно получить символьное представление
-	 * \return символьное представление переданной фигуры
-	 */
-	static char get_figure_by_int(const figure& fig);
+	std::array<figure, rows * columns> game_field_;
 
 public:
-	game_field();
+	game_field() : game_field_(std::array<figure, rows * columns>()) {}
 
 	/**
 	 * \brief ћетод дл€ заполнени€ всего пол€ какой-либо фигурой
@@ -55,7 +48,7 @@ public:
 	 * \param cord  оордината клетки
 	 * \return ‘игура, наход€ща€с€ в данной клетке
 	 */
-	figure get(const coordinate& cord) const;
+	[[nodiscard]] figure get(const coordinate& cord) const;
 
 	/**
 	 * \brief ћетод дл€ вывода в консоль игрового пол€
