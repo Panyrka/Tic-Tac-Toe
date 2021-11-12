@@ -9,7 +9,7 @@ class smart_player final : public player
 {
 private:
 	/**
-	 * \brief  количество р€дов
+	 * \brief  оличество р€дов
 	 */
 	static constexpr size_t number_of_rows = 3;
 
@@ -26,7 +26,7 @@ private:
 	 * \return координата такой комбинации
 	 *	≈сли не найдена, то возвращаетс€ (3, 3)
 	 */
-	static coordinate find_opp_under_win_combination(const game_field& gf, const figure& figure);
+	[[nodiscard]] static coordinate find_opp_under_win_combination(const game_field& gf, const figure& figure);
 
 public:
 	/**
@@ -40,9 +40,9 @@ public:
 	/**
 	 * \brief ћетод дл€ получени€ хода от игрока
 	 * \param gf игровое поле
-	 * \param number_of_moves количество совершЄнных ходов
+	 * \param number_of_moves количество совершенных ходов
 	 * \param players_figure фигура игрока
 	 * \return координату, по которой нужно походить
 	 */
-	coordinate get_move(const game_field& gf, const size_t number_of_moves, const figure& players_figure) override;
+	[[nodiscard]] coordinate get_move(const game_field& gf, const size_t number_of_moves, const figure& players_figure) const override;
 };

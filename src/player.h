@@ -28,15 +28,15 @@ public:
 	/**
 	 * \brief ћетод дл€ получени€ хода от игрока
 	 * \param gf игровое поле
-	 * \param number_of_moves количество совершЄнных ходов 
+	 * \param number_of_moves количество совершенных ходов 
 	 * \param players_figure фигура игрока
 	 * \return координату, по которой нужно походить
 	 */
-	virtual coordinate get_move(const game_field& gf, const size_t number_of_moves, const figure& players_figure) = 0;
+	[[nodiscard]] virtual coordinate get_move(const game_field& gf, const size_t number_of_moves, const figure& players_figure) const = 0;
 
 	/**
 	 * \brief ћетод дл€ получени€ имени игрока
 	 * \return »м€ игрока
 	 */
-	std::string get_name() const;
+	[[nodiscard]] std::string get_name() const;
 };

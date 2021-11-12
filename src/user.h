@@ -19,9 +19,9 @@ public:
 	/**
 	 * \brief Метод для получения хода от игрока
 	 * \param gf игровое поле
-	 * \param number_of_moves количество совершённых ходов
+	 * \param number_of_moves количество совершенных ходов
 	 * \param players_figure фигура игрока
 	 * \return координату, по которой нужно походить
 	 */
-	coordinate get_move(const game_field& gf, const size_t number_of_moves, const figure& players_figure) override;
+	[[nodiscard]] coordinate get_move(const game_field& gf, const size_t number_of_moves, const figure& players_figure) const override;
 };
