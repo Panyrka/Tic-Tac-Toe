@@ -8,14 +8,14 @@ coordinate user::get_move(const game_field& gf, const size_t number_of_moves, co
 	size_t user_input;
 	std::cin >> user_input;
 	--user_input;
-	coordinate cord{ user_input / 3, user_input % 3 };
+	coordinate cord{ user_input % 3, user_input / 3 };
 
-	while (gf.get(cord).is_empty())
+	while (!gf.get(cord).is_empty())
 	{
 		std::cout << "Incorrect position, please, try again: ";
 		std::cin >> user_input;
 		--user_input;
-		cord = { user_input / 3, user_input % 3 };
+		cord = { user_input % 3, user_input / 3 };
 	}
 
 	return cord;
