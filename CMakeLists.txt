@@ -9,6 +9,7 @@ set (MAIN src/main.cpp)
 set (SOURCE
 	src/coordinate.h
 	src/figure.h
+	src/figure.cpp
 	src/game_field.cpp
 	src/game_field.h
 	src/game_handler.cpp
