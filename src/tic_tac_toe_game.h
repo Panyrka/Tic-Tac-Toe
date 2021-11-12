@@ -4,7 +4,7 @@
 #include "game_handler.h"
 
 /**
- * \brief Класс для проведения игор в крестики нолики
+ * \brief Класс для проведения игр в крестики нолики
  */
 class tic_tac_toe_game
 {
@@ -28,7 +28,7 @@ public:
 	void setup_parameters();
 
 	/**
-	 * \brief Метод для запуска игор и вывода результата в консоль
+	 * \brief Метод для запуска игр и вывода результата в консоль
 	 */
 	void play_games() const;
 };
